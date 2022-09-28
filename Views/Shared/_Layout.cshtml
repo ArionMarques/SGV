@@ -1,0 +1,420 @@
+﻿@using Microsoft.AspNetCore.Http
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - SGQ</title>
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" crossorigin="anonymous">
+    <!-- Our Custom CSS -->
+    <link href="~/css/principal.css" rel="stylesheet" />
+    <link href="~/css/Usuario.css" rel="stylesheet" />
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
+    <!-- Font Awesome JS -->
+    <!--<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>-->
+    <script src="https://kit.fontawesome.com/8481a578ce.js" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div id="content">
+            <!-- Page Content  -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <button type="button" id="sidebarCollapse" class="btn btn-info-home">
+                        <i class="fas fa-align-left"></i>
+                    </button>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <p>
+                                    <label class="p">
+                                        Bem vindo (a) @TempData.Peek("Operador")
+                                    </label>
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div id="dismiss">
+                <i class="fas fa-arrow-left"></i>
+            </div>
+            <div class="sidebar-header">
+                <h3>SGQ</h3>
+            </div>
+            <ul class="list-unstyled components">
+                <!--Menu Home-->
+                <li class="active">
+                    <a href="~/home/">
+                        <i class="fas fa-home"></i>
+                        Home
+                    </a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                    </ul>
+                </li>
+                <!--Menu comercial-->
+                @if (Convert.ToBoolean(TempData.Peek("NomeMenu" + "Comercial")) || Convert.ToBoolean(TempData.Peek("IsAdmin")))
+                {
+                    <li>
+                        <a href="#ComercialSubmenu" data-toggle="collapse" aria-expanded="false">
+                            <i class="fas fa-dollar-sign"></i>
+                            Comercial
+                        </a>
+                        <ul class="collapse list-unstyled" id="ComercialSubmenu">
+                            <li>
+                                <a href="~/frete/">
+                                    <i class="fas fa-truck"></i>
+                                    Cotação de Frete
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#RelatorioSubmenu" data-toggle="collapse" aria-expanded="false">
+                                    <i class="fas fa-chart-pie"></i>
+                                    Relatórios
+                                </a>
+                                <ul class="collapse list-unstyled" id="RelatorioSubmenu">
+                                    <li>
+                                        <a href="~/comercial/">Relatório X</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                }
+                <!--Menu de compras-->
+                @if (Convert.ToBoolean(TempData.Peek("NomeMenu" + "Compras")) || Convert.ToBoolean(TempData.Peek("IsAdmin")))
+                {
+                    <li>
+                        <a href="#CompraSubmenu" data-toggle="collapse" aria-expanded="false">
+                            <i class="fas fa-cart-plus"></i>
+                            Compras
+                        </a>
+                        <ul class="collapse list-unstyled" id="CompraSubmenu">
+                            <li>
+                                <a href="#RelCompSubmenu" data-toggle="collapse" aria-expanded="false">
+                                    <i class="fas fa-chart-pie"></i>
+                                    Relatórios
+                                </a>
+                                <ul class="collapse list-unstyled" id="RelComSubmenu">
+                                    <li>
+                                        <a href="#">Relatório X</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                }
+                <!--Menu da contabilidade-->
+                @if (Convert.ToBoolean(TempData.Peek("NomeMenu" + "Contabilidade")) || Convert.ToBoolean(TempData.Peek("IsAdmin")))
+                {
+                    <li>
+                        <a href="#ContabilSubmenu" data-toggle="collapse" aria-expanded="false">
+                            <i class="bi bi-calculator"></i>
+                            Contabilidade
+                        </a>
+                        <ul class="collapse list-unstyled" id="ContabilSubmenu">
+                            <li>
+                                <a href="#RelatorioSubmenu" data-toggle="collapse" aria-expanded="false">
+                                    <i class="fas fa-chart-pie"></i>
+                                    Relatórios
+                                </a>
+                                <ul class="collapse list-unstyled" id="RelatorioSubmenu">
+                                    <li>
+                                        <a href="~/comercial/">Relatório X</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                }
+                <!--Menu de faturamento-->
+                @if (Convert.ToBoolean(TempData.Peek("NomeMenu" + "Faturamento")) || Convert.ToBoolean(TempData.Peek("IsAdmin")))
+                {
+                    <li>
+                        <a href="#FaturamentoSubmenu" data-toggle="collapse" aria-expanded="false">
+                            <i class="fas fa-hand-holding-usd"></i>
+                            Faturamento
+                        </a>
+                        <ul class="collapse list-unstyled" id="FaturamentoSubmenu">
+                            <li>
+                                <a href="~/faturamento/">
+                                    <i class="fas fa-chart-pie"></i>
+                                    Relatórios
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                }
+                <!--Menu Financeiro-->
+                @if (Convert.ToBoolean(TempData.Peek("NomeMenu" + "Financeiro")) || Convert.ToBoolean(TempData.Peek("IsAdmin")))
+                {
+                    <li>
+                        <a href="#FinanceiroSubmenu" data-toggle="collapse" aria-expanded="false">
+                            <i class="fas fa-piggy-bank"></i>
+                            Financeiro
+                        </a>
+                        <ul class="collapse list-unstyled" id="FinanceiroSubmenu">
+                            <li>
+                                <a href="#RelFinSubmenu" data-toggle="collapse" aria-expanded="false">
+                                    <i class="fas fa-chart-pie"></i>
+                                    Relatórios
+                                </a>
+                                <ul class="collapse list-unstyled" id="RelFinSubmenu">
+                                    <li>
+                                        <a href="#">Relatório X</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                }
+                <!--Menu Frota-->
+                @if (Convert.ToBoolean(TempData.Peek("NomeMenu" + "Frota")) || Convert.ToBoolean(TempData.Peek("IsAdmin")))
+                {
+                    <li>
+                        <a href="#FrotaSubmenu" data-toggle="collapse" aria-expanded="false">
+                            <i class="fas fa-truck"></i>
+                            Frota
+                        </a>
+                        <ul class="collapse list-unstyled" id="FrotaSubmenu">
+                            <li>
+                                <a href="#RelFrotaSubmenu" data-toggle="collapse" aria-expanded="false">
+                                    <i class="fas fa-chart-pie"></i>
+                                    Relatórios
+                                </a>
+                                <ul class="collapse list-unstyled" id="RelFrotaSubmenu">
+                                    <li>
+                                        <a href="#">Relatório X</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                }
+                <!--Menu Informática-->
+                @if (Convert.ToBoolean(TempData.Peek("NomeMenu" + "Informatica")) || Convert.ToBoolean(TempData.Peek("IsAdmin")))
+                {
+                    <li>
+                        <a href="#InformaticaSubmenu" data-toggle="collapse" aria-expanded="false">
+                            <i class="fas fa-desktop"></i>
+                            Informática
+                        </a>
+                        <ul class="collapse list-unstyled" id="InformaticaSubmenu">
+                            @if (Convert.ToBoolean(TempData.Peek("NomeSubMenu" + "Cadastro de Usuarios")) || Convert.ToBoolean(TempData.Peek("IsAdmin")))
+                            {
+                                <li>
+                                    <a href="~/usuario/">
+                                        <i class="fas fa-user-cog"></i>
+                                        Cadastro de Usuários
+                                    </a>
+                                </li>
+                            }
+                            @if (Convert.ToBoolean(TempData.Peek("NomeSubMenu" + "Solicitação de acesso")) || Convert.ToBoolean(TempData.Peek("IsAdmin")))
+                            {
+                                <li>
+                                    <a href="~/solicitacaousuario/">
+                                        <i class="fas fa-user-plus"></i>
+                                        Solicitação de acesso
+                                    </a>
+                                </li>
+                            }
+                            @if (Convert.ToBoolean(TempData.Peek("NomeSubMenu" + "Cadastro de licenças")) || Convert.ToBoolean(TempData.Peek("IsAdmin")))
+                            {
+                                <li>
+                                    <a href="/softwares/">
+                                        <i class="fas fa-user-plus"></i>
+                                        Cadastro de licenças/softwares
+                                    </a>
+                                </li>
+                            }
+                        </ul>
+                    </li>
+
+                }
+
+                <!--Menu de manutenção-->
+                @if (Convert.ToBoolean(TempData.Peek("NomeMenu" + "Manutencao")) || Convert.ToBoolean(TempData.Peek("IsAdmin")))
+                {
+                    <li>
+                        <a href="#ManutSubmenu" data-toggle="collapse" aria-expanded="false">
+                            <i class="fas fa-tools"></i>
+                            Manutenção
+                        </a>
+                        <ul class="collapse list-unstyled" id="ManutSubmenu">
+                            <li>
+                                <a href="#RelManutSubmenu" data-toggle="collapse" aria-expanded="false">
+                                    <i class="fas fa-chart-pie"></i>
+                                    Relatórios
+                                </a>
+                                <ul class="collapse list-unstyled" id="RelManutSubmenu">
+                                    <li>
+                                        <a href="#">Relatório X</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                }
+                <!--Menu de produção-->
+                @if (Convert.ToBoolean(TempData.Peek("NomeMenu" + "Producao")) || Convert.ToBoolean(TempData.Peek("IsAdmin")))
+                {
+                    <li>
+                        <a href="#ProducaoSubmenu" data-toggle="collapse" aria-expanded="false">
+                            <i class="fas fa-hammer"></i>
+                            Produção
+                        </a>
+                        <ul class="collapse list-unstyled" id="ProducaoSubmenu">
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-truck"></i>
+                                    Cadastros
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#RelProdSubmenu" data-toggle="collapse" aria-expanded="false">
+                                    <i class="fas fa-chart-pie"></i>
+                                    Relatórios
+                                </a>
+                                <ul class="collapse list-unstyled" id="RelProdSubmenu">
+                                    <li>
+                                        <a href="#">Relatório</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                }
+                <!--Menu de pós vendas-->
+                @if (Convert.ToBoolean(TempData.Peek("NomeMenu" + "PosVendas")) || Convert.ToBoolean(TempData.Peek("IsAdmin")))
+                {
+                    <li>
+                        <a href="#PosVendasSubmenu" data-toggle="collapse" aria-expanded="false">
+                            <i class="fas fa-headset"></i>
+                            Pós Vendas
+                        </a>
+                        <ul class="collapse list-unstyled" id="PosVendasSubmenu">
+                            <li>
+                                <a href="~/posvendas/">
+                                    <i class="fas fa-chart-pie"></i>
+                                    Relatórios
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                }
+                <!--Menu de Qualidade-->
+                @if (Convert.ToBoolean(TempData.Peek("NomeMenu" + "Qualidade")) || Convert.ToBoolean(TempData.Peek("IsAdmin")))
+                {
+                    <li>
+                        <a href="#QualSubmenu" data-toggle="collapse" aria-expanded="false">
+                            <i class="fas fa-medal"></i>
+                            Qualidade
+                        </a>
+                        <ul class="collapse list-unstyled" id="QualSubmenu">
+                            <li>
+                                <a href="~/rnc/">
+                                    <i class="fas fa-edit"></i>
+                                    RNC
+                                </a>
+                            </li>
+                            <li>
+                                <a href="~/instrumentos/">
+                                    <i class="fas fa-edit"></i>
+                                    Cadastro de Instrumentos
+                                </a>
+                            </li>
+                            <li>
+                                <a href="~/verificacaotesteeletrico/">
+                                    <i class="fas fa-edit"></i>
+                                    Verificação Teste Elétrico
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                }
+                <!--Menu de RH-->
+                @if (Convert.ToBoolean(TempData.Peek("NomeMenu" + "RH")) || Convert.ToBoolean(TempData.Peek("IsAdmin")))
+                {
+                    <li>
+                        <a href="#RHSubmenu" data-toggle="collapse" aria-expanded="false">
+                            <i class="fas fa-users"></i>
+                            Recursos Humanos
+                        </a>
+                        <ul class="collapse list-unstyled" id="RHSubmenu">
+                            <li>
+                                <a href="~/alteracaofuncional/">
+                                    <i class="fas fa-chart-pie"></i>
+                                    Alteração Funcional
+                                </a>
+                                <a href="~/solicitacaodesligamento/">
+                                    <i class="fas fa-chart-pie"></i>
+                                    Desligamento de Funcionário
+                                </a>
+                                <a href="~/solicitacaotreinamento/">
+                                    <i class="fas fa-chart-pie"></i>
+                                    Solicitação de Treinamento
+                                </a>
+                            </li>
+                        </ul>
+
+                    </li>
+                }
+                <!--Sobre-->
+                <li>
+                    <a href="#">
+                        <i class="fas fa-info-circle"></i>
+                        Sobre
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <label class="nav-link">@Html.ActionLink("Sair", "Logout")</label>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="overlay"></div>
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <!-- jQuery Custom Scroller CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#sidebar").mCustomScrollbar({
+                theme: "minimal"
+            });
+
+            $('#dismiss, .overlay').on('click', function () {
+                $('#sidebar').removeClass('active');
+                $('.overlay').removeClass('active');
+            });
+
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').addClass('active');
+                $('.overlay').addClass('active');
+                $('.collapse.in').toggleClass('in');
+                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+            });
+        });
+    </script>
+    @RenderBody()
+</body>
+</html>

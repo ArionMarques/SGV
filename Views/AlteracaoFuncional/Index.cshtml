@@ -1,0 +1,48 @@
+﻿@model X.PagedList.IPagedList<SGV.Models.RecursosHumanos.AlteracaoFuncional>
+@using X.PagedList.Mvc.Core;
+@using X.PagedList;
+@using Microsoft.AspNetCore.Http
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/css/PagedList.css" rel="stylesheet" />
+<form method="post" action="/alteracaofuncional/editar">
+    <div class="wrapper">
+        <!-- Page Content  -->
+        <div id="content">
+            <table class="table table-striped" id="tbUsuarios">
+                <thead>
+                    <tr>
+                        <th scope="col" class="table-venax">#</th>
+                        <th scope="col" class="table-venax">Nome do Funcionário</th>
+                        <th scope="col" class="table-venax">Setor destino</th>
+                        <th scope="col" class="table-venax">Status</th>
+                        <th scope="col" class="table-venax">Ação</th>
+                        <th scope="col" class="table-venax">
+                            <a href="/alteracaofuncional/novo">Novo</a>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var AlteracaoFuncional in Model)
+                    {
+                        <tr>
+                            <td>@AlteracaoFuncional.Id</td>
+                            <td>@AlteracaoFuncional.NomeFuncionario</td>
+                            <td>@AlteracaoFuncional.SetorDestino</td>
+                            <td>Aberto</td>
+                            <td>
+                                <a href="/AlteracaoFuncional/visualizar/@AlteracaoFuncional.Id" class="btn">Visualizar</a>
+                                <a href="/AlteracaoFuncional/editar/@AlteracaoFuncional.Id" class="btn">Editar</a>
+                            </td>
+                            <td></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))
+        </div>
+    </div>
+</form>

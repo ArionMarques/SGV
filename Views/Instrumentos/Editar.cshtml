@@ -1,0 +1,96 @@
+﻿@{
+    ViewData["Title"] = "Novo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/css/Qualidade/Instrumentos/Instrumentos.css" rel="stylesheet" />
+<div class="box-container">
+    <div class="box-titulo">
+        <!--Box com o título-->
+        <h5 class="card-title">Instrumentos de Medição</h5>
+    </div>
+    <div class="box-conteudo">
+        <!--começo do box com conteúdo-->
+        <div class="box">
+            <!--Começo do primeiro Box-->
+            <div class="conteudos-linha">
+                <label for="Data_Comeco" class="coluna-label">Descrição:</label>
+                <div class="coluna-input">
+                    <input type="text" class="input-dados" id="Data_Comeco" value="paquimetro digital" name="Data_Comeco" >
+                </div>
+            </div>
+            <div class="conteudos-linha">
+                <label for="Data_Comeco" class="coluna-label">Fabricante:</label>
+                <div class="coluna-input">
+                    <input type="text" class="input-dados" id="Data_Comeco" name="Data_Comeco" value="MTX" >
+                </div>
+            </div>
+            <div class="conteudos-linha">
+                <label for="Data_Comeco" class="coluna-label">Capacidade:</label>
+                <div class="coluna-input">
+                    <input type="text" class="input-dados" id="Data_Comeco" name="Data_Comeco"  value="175mm">
+                </div>
+            </div>
+
+            <div class="conteudos-linha">
+                <label for="Data_Comeco" class="coluna-label">Situação:</label>
+                <div class="coluna-input">
+                    <select class="select-dados" id="setor" name="setor">
+                        <option>Selecione</option>
+                        <option value="VEN" id="setor">Apto</option>
+                        <option value="PE" selected>Não Apto</option>
+                        
+                    </select>
+                </div>
+            </div>
+            <div class="conteudos-linha">
+                <label for="Data_Comeco" class="coluna-label">Data da Calibração:</label>
+                <div class="coluna-input">
+                    <input type="date" class="input-dados" id="Data_Comeco" name="Data_Comeco" value="2022-01-17" >
+                </div>
+            </div>
+            <div class="conteudos-linha">
+                <label for="Data_Comeco" class="coluna-label">Critério de Aceitação:</label>
+                <div class="coluna-input">
+                    <input type="text" class="input-dados" id="Data_Comeco" name="Data_Comeco"  value="Margem de erro 0.00001mm">
+                </div>
+            </div>
+            <div class="conteudos-linha">
+                <label for="Data_Comeco" class="coluna-label">Situação Após Calibração:</label>
+                <div class="coluna-input">
+                    <input type="text" class="input-dados" id="Data_Comeco" name="Data_Comeco"  value="Aprovado">
+                </div>
+            </div>
+            <div class="conteudos-linha">
+                <label for="Data_Comeco" class="coluna-label">Número do Laudo:</label>
+                <div class="coluna-input">
+                    <input type="text" class="input-dados" id="Data_Comeco" name="Data_Comeco"  value="123456">
+                </div>
+            </div>
+            <div class="conteudos-linha">
+                <label for="Data_Comeco" class="coluna-label">Frequência Calibração:</label>
+                <div class="coluna-input">
+                    <input type="text" class="input-dados" id="Data_Comeco" name="Data_Comeco"  value="Semestral">
+                </div>
+            </div>
+            <div class="conteudos-linha">
+                <label for="Data_Comeco" class="coluna-label">Próxima Calibração:</label>
+                <div class="coluna-input">
+                    <input type="date" class="input-dados" id="Data_Comeco" name="Data_Comeco" value="2022-06-17" >
+                </div>
+            </div>
+            <div class="conteudos-linha">
+                <label for="Data_Comeco" class="coluna-label">Usuário:</label>
+                <div class="coluna-input">
+                    <input type="text" class="input-dados" id="Data_Comeco" name="Data_Comeco"  value="Laurete">
+                </div>
+            </div>
+        </div><!--Final do primeiro box-->
+    </div><!--Final do box com o conteúdo-->
+    <div class="box-botoes">
+        <!--Começo do Box com os botões-->
+        <button type="submit" class="btn btn-success text-white" value="gravar" name="submitButton">Gravar</button>
+        <a href="/Instrumentos/novo" class="btn btn-primary">Limpar</a>
+        <a href="/Instrumentos/" class="btn btn-danger text-white">Cancelar</a>
+    </div><!--Final do Box dos Botões-->
+</div>

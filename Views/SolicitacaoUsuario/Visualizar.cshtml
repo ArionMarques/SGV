@@ -1,0 +1,216 @@
+﻿@model SGV.Models.SolicitacaoUsuario
+@using Microsoft.AspNetCore.Http
+@using System.Globalization
+@{
+    ViewData["Title"] = "Visualizar Solicitação de Usuário";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!--Início do cadastro de solicitação de acesso-->
+<form method="post" action="/SolicitacaoUsuario/Salvar">
+    <div class="conteudo-inf-pessoais">
+        <div class="primeiro-box-cadastrar">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Informações do Usuário</h4>
+                    <div class="form-group row">
+                        <label for="fname"
+                               class="col-sm-3 text-end control-label col-form-label">Nome</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="Nome" name="nome" value="@Model.Nome">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="fname"
+                               class="col-sm-3 text-end control-label col-form-label">Setor</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="Nome" name="setor" value="@TempData["Setor"]">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="local" class="col-sm-3 text-end control-label col-form-label">Local</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="local" name="local" value="@Model.Local">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="Data_Comeco"
+                               class="col-sm-3 text-end control-label col-form-label">Data do início das atividades</label>
+                        <div class="col-sm-9">
+                            <input type="date" class="form-control" id="Data_Comeco" name="Data_Comeco" value="@Model.Data_Comeco.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture)">
+                        </div>
+                    </div>
+                </div>
+                <div class="border-top">
+                    <div class="card-body">
+                        <button type="submit" class="btn btn-success text-white" value="gravar" name="submitButton">Gravar</button>
+                        <a href="/solicitacaousuario/novo" class="btn btn-primary">Limpar</a>
+                        <a href="/solicitacaousuario/" class="btn btn-danger text-white">Cancelar</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="segundo-box-solicitar">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Ferramentas necessárias</h4>
+                    <div class="check-box">
+                        @if (@Model.Email)
+                        {
+                            <input class="form-check-input" type="checkbox" id="email" name="email" checked>
+                            <label class="form-check-label" for="flexCheckDefault">
+                                E-mail
+                            </label>
+                        }
+                        else
+                        {
+                            <input class="form-check-input" type="checkbox" id="email" name="email">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                E-mail
+                            </label>
+                        }
+                    </div>
+                    <div class="check-box">
+                        @if (@Model.Compumate)
+                        {
+                            <input class="form-check-input" type="checkbox" id="compumate" name="compumate" checked>
+                            <label class="form-check-label" for="flexCheckChecked">
+                                Compumate
+                            </label>}
+                        else
+                        {
+                            <input class="form-check-input" type="checkbox" id="compumate" name="compumate">
+                            <label class="form-check-label" for="flexCheckChecked">
+                                Compumate
+                            </label>
+                        }
+                    </div>
+                    <div class="check-box">
+                        @if (@Model.NovaEstacao)
+                        {
+                            <input class="form-check-input" type="checkbox" id="NovaEstacao" name="NovaEstacao" checked>
+                            <label class="form-check-label" for="flexCheckChecked">
+                                Nova estação de trabalho
+                            </label>
+                        }
+                        else
+                        {
+                            <input class="form-check-input" type="checkbox" id="NovaEstacao" name="NovaEstacao">
+                            <label class="form-check-label" for="flexCheckChecked">
+                                Nova estação de trabalho
+                            </label>
+                        }
+
+                    </div>
+                    <div class="check-box">
+                        @if (@Model.SoftwarePadrao)
+                        {
+                            <input class="form-check-input" type="checkbox" id="SoftwarePadrao" name="SoftwarePadrao" checked>
+                            <label class="form-check-label" for="flexCheckChecked">
+                                Software Padrão (Office, Leitor de PDF)
+                            </label>
+                        }
+                        else
+                        {
+                            <input class="form-check-input" type="checkbox" id="SoftwarePadrao" name="SoftwarePadrao">
+                            <label class="form-check-label" for="flexCheckChecked">
+                                Software Padrão (Office, Leitor de PDF)
+                            </label>
+                        }
+                    </div>
+                    <div class="check-box">
+                        @if (@Model.SoftwareEspecial)
+                        {
+                            <input class="form-check-input" type="checkbox" id="SoftwareEspecial" name="SoftwareEspecial" checked>
+                            <label class="form-check-label" for="flexCheckChecked">
+                                Softwares Especiais
+                            </label>
+                        }
+                        else
+                        {
+                            <input class="form-check-input" type="checkbox" id="SoftwareEspecial" name="SoftwareEspecial">
+                            <label class="form-check-label" for="flexCheckChecked">
+                                Softwares Especiais
+                            </label>
+                        }
+                    </div>
+                    <div class="check-box">
+                        @if (@Model.AcessoInternet)
+                        {
+                            <input class="form-check-input" type="checkbox" id="AcessoInternet" name="AcessoInternet" checked>
+                            <label class="form-check-label" for="flexCheckChecked">
+                                Acesso a Internet
+                            </label>
+                        }
+                        else
+                        {
+                            <input class="form-check-input" type="checkbox" value="@Model.AcessoInternet" id="AcessoInternet" name="AcessoInternet">
+                            <label class="form-check-label" for="flexCheckChecked">
+                                Acesso a Internet
+                            </label>
+                        }
+                    </div>
+                    <div class="check-box">
+                        @if (@Model.AcessoPastas)
+                        {
+                            <input class="form-check-input" type="checkbox" id="AcessoPastas" name="AcessoPastas" checked>
+                            <label class="form-check-label" for="flexCheckChecked">
+                                Acesso as pastas
+                            </label>
+                        }
+                        else
+                        {
+                            <input class="form-check-input" type="checkbox" id="AcessoPastas" name="AcessoPastas">
+                            <label class="form-check-label" for="flexCheckChecked">
+                                Acesso as pastas
+                            </label>
+                        }
+                    </div>
+                    <div class="check-box">
+                        @if (@Model.Ramal)
+                        {
+                            <input class="form-check-input" type="checkbox" id="Ramal" name="Ramal" checked>
+                            <label class="form-check-label" for="flexCheckChecked">
+                                Ramal Telefônico
+                            </label>
+                        }
+                        else
+                        {
+                            <input class="form-check-input" type="checkbox" id="Ramal" name="Ramal">
+                            <label class="form-check-label" for="flexCheckChecked">
+                                Ramal Telefônico
+                            </label>
+                        }
+                    </div>
+                    <div class="check-box">
+                        @if (@Model.Skype)
+                        {
+                            <input class="form-check-input" type="checkbox" value="" id="Skype" name="Skype" checked>
+                            <label class="form-check-label" for="flexCheckChecked">
+                                Skype
+                            </label>
+                        }
+                        else
+                        {
+                            <input class="form-check-input" type="checkbox" id="Skype" name="Skype">
+                            <label class="form-check-label" for="flexCheckChecked">
+                                Skype
+                            </label>
+                        }
+                    </div>
+                    <div class="form-group row">
+                        <label for="cono1"
+                               class="col-sm-3 text-end control-label col-form-label">Observações</label>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-9">
+                            <textarea class="form-control" placeholder="digite aqui qualquer informação adicional" id="observacoes" name="observacoes">@Model.Observacoes</textarea>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,516 @@
+/*Para telas menores*/
+@media (max-width: 1366px) {
+    .box-container {
+        display: inline-block;
+        width: 98%;
+        height: 82%;
+        position: absolute;
+        margin-left: 1%;
+        overflow: hidden;
+        margin-top: -25px;
+    }
+
+    .box-titulo {
+        margin-top: 0%;
+        font-size: 0.8rem;
+        line-height: 0.8;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: .25rem;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        width: 100%;
+        height: 8%;
+        border: 1px #e9e7e7 solid;
+        display: block;
+        padding-left: 40%;
+        padding-top: 0.5%;
+    }
+
+    .box-conteudo {
+        margin-top: 10px;
+        display: inline-block;
+        width: 100%;
+        height: 75%;
+    }
+
+    .box {
+        float: left;
+        width: 33.33%;
+        padding: .375rem .75rem;
+        font-size: 0.8rem;
+        line-height: 0.8;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: .25rem;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        height: 100%;
+        padding-top: 2%;
+    }
+
+    .segundo-box {
+        margin: 0 auto;
+        width: 33.33%;
+        background-color: green;
+        padding: .375rem .75rem;
+        font-size: 0.8rem;
+        line-height: 0.8;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: .25rem;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        height: 100%;
+        display: inline-block;
+    }
+
+    .terceiro-box {
+        float: right;
+        width: 33.33%;
+        padding: .375rem .75rem;
+        font-size: 0.8rem;
+        line-height: 0.8;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: .25rem;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        height: 100%;
+    }
+
+    .box-botoes {
+        margin-top: 2px;
+        font-size: 0.8rem;
+        line-height: 0.8;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: .25rem;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        width: 100%;
+        height: 12%;
+        border: 1px #e9e7e7 solid;
+        display: block;
+        padding-left: 40%;
+        padding-top: 1%;
+    }
+
+    .linha-conteudo-terceiro {
+        margin-bottom: 1rem;
+        margin-left: 0.2%;
+        height: 52px;
+        margin-top: 6%;
+    }
+
+    .coluna-textarea {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .linha-conteudo {
+        margin-bottom: 0.3rem;
+        margin-left: 1%;
+        height: 20px;
+    }
+
+    .coluna-input {
+        -ms-flex: 0 0 60%;
+        flex: 0 0 60%;
+        max-width: 60%;
+        height: 20px;
+    }
+
+
+    .box-obs {
+        display: block;
+        width: 385px;
+        height: 7.5em;
+        padding: .375rem .75rem;
+        font-size: 0.8rem;
+        line-height: 0.8;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: .25rem;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        height: 55px;
+        margin-left: 5%;
+    }
+
+    .box-justificativa {
+        display: block;
+        width: 385px;
+        padding: .375rem .75rem;
+        font-size: 0.8rem;
+        line-height: 0.8;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: .25rem;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        height: 50px;
+        margin-left: 5%;
+    }
+
+
+    .definicoes-label {
+        margin-top: 1%;
+        margin-bottom: 0;
+        font-size: 0.9em;
+        line-height: 0.9;
+        -ms-flex: 0 0 40%;
+        flex: 0 0 40%;
+        max-width: 40%;
+        height: 20px;
+    }
+
+    .coluna-terceiro-box {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-top:2%;
+    }
+
+    .definicoes-input {
+        margin-top: 0.5%;
+        display: block;
+        width: 100%;
+        padding: .375rem .75rem;
+        font-size: 0.8rem;
+        line-height: 0.8;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: .25rem;
+        height: 1.8em;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        height: 20px;
+    }
+
+
+        .definicoes-input:disabled, .definicoes-input[readonly] {
+            background-color: #e9ecef;
+            opacity: 1;
+        }
+
+    .definicoes-input-segundobox:disabled, .definicoes-input-segundobox[readonly] {
+        background-color: #e9ecef;
+        opacity: 1;
+    }
+
+
+    .linha {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+
+    .check-box {
+        position: relative;
+        display: block;
+        padding-left: 1.25rem;
+        margin-left: 2%;
+        width: 100%;
+    }
+
+    .label-terceirobox {
+        -ms-flex: 0 0 90%;
+        flex: 0 0 90%;
+        max-width: 90%;
+        font-size: 0.7rem;
+        line-height: 0.7;
+    }
+}
+/*para telas maiores*/
+@media (min-width: 1367px) {
+    .box-container {
+        display: inline-block;
+        width: 98%;
+        height: 82%;
+        position: absolute;
+        margin-left: 1%;
+        overflow: hidden;
+        margin-top: -25px;
+    }
+
+    .box-titulo {
+        margin-top: 0%;
+        font-size: 0.8rem;
+        line-height: 0.8;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: .25rem;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        width: 100%;
+        height: 8%;
+        border: 1px #e9e7e7 solid;
+        display: block;
+        padding-left: 40%;
+        padding-top: 0.5%;
+    }
+
+    .box-conteudo {
+        margin-top: 10px;
+        display: inline-block;
+        width: 100%;
+        height: 75%;
+    }
+
+    .box {
+        float: left;
+        width: 33.33%;
+        padding: .375rem .75rem;
+        font-size: 0.8rem;
+        line-height: 0.8;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: .25rem;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        height: 100%;
+    }
+
+    .segundo-box {
+        margin: 0 auto;
+        width: 33.33%;
+        background-color: green;
+        padding: .375rem .75rem;
+        font-size: 0.8rem;
+        line-height: 0.8;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: .25rem;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        height: 100%;
+        display: inline-block;
+    }
+
+    .terceiro-box {
+        float: right;
+        width: 33.33%;
+        padding: .375rem .75rem;
+        font-size: 0.8rem;
+        line-height: 0.8;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: .25rem;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        height: 100%;
+    }
+
+
+
+    .box-botoes {
+        margin-top: 2px;
+        font-size: 0.8rem;
+        line-height: 0.8;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: .25rem;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        width: 100%;
+        height: 12%;
+        border: 1px #e9e7e7 solid;
+        display: block;
+        padding-left: 40%;
+        padding-top: 1%;
+    }
+
+    .linha-conteudo {
+        margin-bottom: 0.7rem;
+        margin-left: 0.5%;
+        height: 30px;
+    }
+
+    .linha-conteudo-terceiro-box {
+        margin-bottom: 0.7rem;
+        margin-left: 0.5%;
+        height: 70px;
+    }
+
+    .linha-conteudo-terceiro {
+        margin-bottom: 1rem;
+        margin-left: 0.2%;
+        height: 70px;
+        margin-top: 6%;
+    }
+
+    .coluna-input {
+        -ms-flex: 0 0 65%;
+        flex: 0 0 65%;
+        max-width: 55%;
+    }
+
+    .coluna-textarea {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .linha-conteudo-segundobox {
+        margin-bottom: 1rem;
+        margin-left: 0.2%;
+    }
+
+    .coluna-input-segundobox {
+        -ms-flex: 0 0 65%;
+        flex: 0 0 65%;
+        max-width: 65%;
+    }
+
+
+    .box-obs {
+        display: block;
+        width: 385px;
+        height: 7.5em;
+        padding: .375rem .75rem;
+        font-size: 1rem;
+        line-height: 1;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: .25rem;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        height: 55px;
+        margin-left: 5%;
+    }
+
+        .box-obs:disabled, .box-obs[readonly] {
+            background-color: #e9ecef;
+            opacity: 1;
+        }
+
+    .box-justificativa {
+        display: block;
+        width: 385px;
+        padding: .375rem .75rem;
+        font-size: 1rem;
+        line-height: 1;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: .25rem;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        height: 50px;
+        margin-left: 5%;
+    }
+
+    .definicoes-label {
+        margin-top: 5%;
+        margin-bottom: 0;
+        font-size: 1.2em;
+        line-height: 1.2;
+        -ms-flex: 0 0 35%;
+        flex: 0 0 35%;
+        max-width: 35%;
+    }
+
+    .definicoes-label-segundobox {
+        margin-top: 5%;
+        margin-bottom: 0;
+        font-size: 0.8em;
+        line-height: 0.8;
+        -ms-flex: 0 0 35%;
+        flex: 0 0 35%;
+        max-width: 35%;
+    }
+
+    .definicoes-input {
+        margin-top: 5%;
+        margin-left: 6%;
+        display: block;
+        width: 100%;
+        padding: .375rem .75rem;
+        font-size: 1rem;
+        line-height: 1;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: .25rem;
+        height: 1.8em;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        height: 30px;
+    }
+
+    .definicoes-input-segundobox {
+        margin-top: 5%;
+        display: block;
+        width: 100%;
+        padding: .375rem .75rem;
+        font-size: 1rem;
+        line-height: 1;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: .25rem;
+        height: 1.8em;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    }
+
+
+    .definicoes-input:disabled, .definicoes-input[readonly] {
+        background-color: #e9ecef;
+        opacity: 1;
+    }
+
+    .definicoes-input-segundobox:disabled, .definicoes-input-segundobox[readonly] {
+        background-color: #e9ecef;
+        opacity: 1;
+    }
+
+
+    .linha {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+
+    .check-box {
+        position: relative;
+        display: block;
+        padding-left: 1.25rem;
+        margin-left: 2%;
+        width: 100%;
+    }
+
+    .check-box-terceiro-box {
+        position: relative;
+        display: block;
+        padding-left: 1.25rem;
+        margin-left: -15px;
+        width: 100%;
+    }
+
+    .label-terceirobox {
+        -ms-flex: 0 0 90%;
+        flex: 0 0 90%;
+        max-width: 90%;
+        font-size: 1rem;
+        line-height: 1;
+    }
+}

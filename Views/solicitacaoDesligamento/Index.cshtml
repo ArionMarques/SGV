@@ -1,0 +1,48 @@
+﻿@model X.PagedList.IPagedList<SGV.Models.RecursosHumanos.solicitacaoDesligamento>
+@using X.PagedList.Mvc.Core;
+@using X.PagedList;
+@using Microsoft.AspNetCore.Http
+@{
+    ViewData["Title"] = "Solicitação de Desligamento de Funcionários";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/css/PagedList.css" rel="stylesheet" />
+<form method="post" action="/solicitacaodesligamento/editar">
+    <div class="wrapper">
+        <!-- Page Content  -->
+        <div id="content">
+            <table class="table table-striped" id="tbUsuarios">
+                <thead>
+                    <tr>
+                        <th scope="col" class="table-venax">#</th>
+                        <th scope="col" class="table-venax">Nome do Funcionário</th>
+                        <th scope="col" class="table-venax">Setor</th>
+                        <th scope="col" class="table-venax">Status</th>
+                        <th scope="col" class="table-venax">Ação</th>
+                        <th scope="col" class="table-venax">
+                            <a href="/solicitacaodesligamento/novo">Novo</a>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var solicitacaodesligamento in Model)
+                    {
+                        <tr>
+                            <td>@solicitacaodesligamento.id</td>
+                            <td>@solicitacaodesligamento.nomeColaborador</td>
+                            <td>@solicitacaodesligamento.Setor</td>
+                            <td>Aberto</td>
+                            <td>
+                                <a href="/solicitacaodesligamento/visualizar/@solicitacaodesligamento.id" class="btn">Visualizar</a>
+                                <a href="/solicitacaodesligamento/editar/@solicitacaodesligamento.id" class="btn">Editar</a>
+                            </td>
+                            <td></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))
+        </div>
+    </div>
+</form>

@@ -1,0 +1,33 @@
+﻿@model X.PagedList.IPagedList<SGV.Models.RecursosHumanos.AlteracaoFuncional>
+@using X.PagedList.Mvc.Core;
+@using X.PagedList;
+@using Microsoft.AspNetCore.Http
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/css/PagedList.css" rel="stylesheet" />
+<form method="post" action="/alteracaofuncional/editar">
+    <div class="wrapper">
+        <!-- Page Content  -->
+        <div id="content">
+            <table class="table table-striped" id="tbUsuarios">
+                <thead>
+                    <tr>
+                        <th scope="col" class="table-venax">#</th>
+                        <th scope="col" class="table-venax">Nome do Funcionário</th>
+                        <th scope="col" class="table-venax">Setor destino</th>
+                        <th scope="col" class="table-venax">Status</th>
+                        <th scope="col" class="table-venax">Ação</th>
+                        <th scope="col" class="table-venax">
+                            <a href="/rnc/novo">Novo</a>
+                        </th>
+                    </tr>
+                </thead>
+                
+            </table>
+            
+        </div>
+    </div>
+</form>

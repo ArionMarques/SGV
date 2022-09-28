@@ -1,0 +1,76 @@
+﻿@model SGV.Models.RecursosHumanos.solicitacaoDesligamento
+@using System.Globalization
+@{
+    ViewData["Title"] = "Novo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/css/AlreacaoFuncional.css" rel="stylesheet" />
+<!--Início do cadastro de solicitação de acesso-->
+<form method="post" action="/alteracaofuncional/Salvar">
+    <div class="conteudo-inf-pessoais">
+        <div class="primeiro-box-cadastrar">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Solicitação de Desligamento de Funcionário</h5>
+                    <div class="form-group row">
+                        <label class="col-sm-3 text-end control-label col-form-label">Setor</label>
+                        <div class="col-md-9">
+                            <select class="select2 form-select shadow-none" id="setorOrigem" name="setorOrigem" style="width: 100%; height:1.5em;">
+                                <option>Selecione</option>
+                                <optgroup label="Comercial">
+                                    <option value="VEN" id="setor">Vendas</option>
+                                    <option value="PE">Pedidos</option>
+                                    <option value="PEC">Peças</option>
+                                    <option value="MP">Marketplace</option>
+                                </optgroup>
+                                <optgroup label="Compras">
+                                    <option value="COM">Compras</option>
+                                </optgroup>
+                                <optgroup label="Contabilidade">
+                                    <option value="CTB">Contabilidade</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="fname"
+                               class="col-sm-3 text-end control-label col-form-label">Nome do Colaborador</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="nomeFuncionario" placeholder="Digite o nome do funcionário" name="nomeFuncionario">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="local" class="col-sm-3 text-end control-label col-form-label">
+                            Motivo
+                        </label>
+                        <div class="col-md-9">
+                            <select class="select2 form-select shadow-none" id="funcaoOrigem" name="funcaoOrigem" style="width: 100%; height:1.5em;">
+                                <option>Selecione</option>
+                                <option value="VEN" id="setor">Final de contrato</option>
+                                <option value="PE">Rendimento baixo</option>
+                                <option value="PEC">Falta grave</option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="form-group row">
+                        <label for="Data_Comeco"
+                               class="col-sm-3 text-end control-label col-form-label">Data do Desligamento</label>
+                        <div class="col-sm-9">
+                            <input type="date" class="form-control" id="dataSolicitacao" placeholder="digite a data do começo das atividades" name="dataSolicitacao">
+                        </div>
+                    </div>
+                </div>
+                <div class="border-top">
+                    <div class="card-body">
+                        <button type="submit" class="btn btn-success text-white" value="gravar" name="submitButton">Gravar</button>
+                        <a href="/alteracaofuncional/novo" class="btn btn-primary">Limpar</a>
+                        <a href="/alteracaofuncional/" class="btn btn-danger text-white">Cancelar</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</form>
+

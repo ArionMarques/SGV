@@ -1,0 +1,44 @@
+﻿@model List<SGV.Models.Usuario>
+@using Microsoft.AspNetCore.Http
+@{ string Login = Context.Session.GetString("Login");
+}
+@{
+    ViewData["Title"] = "Cadastro de Usuários";
+}
+<link href="~/css/Informatica/Usuario.css" rel="stylesheet" />
+<form method="post">
+    <div class="wrapper">
+        <!-- Page Content  -->
+        <div id="content">
+            <table class="table table-striped" id="tbUsuarios">
+                <thead>
+                    <tr>
+                        <th scope="col" class="table-venax">#</th>
+                        <th scope="col" class="table-venax">Código do Operador</th>
+                        <th scope="col" class="table-venax">Nome</th>
+                        <th scope="col" class="table-venax">Ação</th>
+                        <th scope="col" class="table-venax">
+                            <a href="/usuario/cadastrar">Novo</a>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var usuario in Model)
+                    {
+                        <tr>
+                            <th scope="row"></th>
+                            <td>@usuario.Operador</td>
+                            <td>@usuario.Nome</td>
+                            <td>
+                                <a href="/usuario/atualizar" class="btn">Editar</a>
+                                <a href="/usuario/excluir" class="btn">Excluir</a>
+                            </td>
+                            <td></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</form>

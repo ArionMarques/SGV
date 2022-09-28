@@ -1,0 +1,79 @@
+﻿@model SGV.Models.Softwares
+@using Microsoft.AspNetCore.Http
+@using System.Globalization
+@{
+    ViewData["Title"] = "Editar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!--Início do form de cadastro de usuários-->
+<div class="conteudo-inf-pessoais">
+    <div class="primeiro-box-cadastrar">
+        <div class="card">
+            <form method="post" action="/softwares/atualizar">
+                <div class="card-body">
+                    <h4 class="card-title">Cadastro de informações do Software/Licença</h4>
+                    <div class="form-group row">
+                        <label for="fname"
+                               class="col-sm-3 text-end control-label col-form-label">Nome</label>
+                        <div class="col-sm-9">
+                            <input hidden id="sidebar" name="id" value="@Model.ID">
+                            <input type="text" class="form-control" id="Nome" placeholder="Digite o nome do software/licença" name="nome" value="@Model.Nome">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="lname" class="col-sm-3 text-end control-label col-form-label">
+                            Responsável
+                        </label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="responsavel" placeholder="Digite o nome do responsável pelo software/licença" name="responsavel" value="@Model.Responsavel">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="email1"
+                               class="col-sm-3 text-end control-label col-form-label">Valor</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="valor" id="valor" placeholder="digite o valor" name="valor" value="@Model.Valor.ToString("F2", CultureInfo.InvariantCulture)">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="cono1"
+                               class="col-sm-3 text-end control-label col-form-label">Data da Compra</label>
+                        <div class="col-sm-9">
+                            <input type="date" class="form-control" id="datacompra" name="datacompra" value="@Model.DataCompra.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture)">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="cono1"
+                               class="col-sm-3 text-end control-label col-form-label">Validade</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="validade" placeholder="digite a validade da licença" name="validade" value="@Model.Validade">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="cono1"
+                               class="col-sm-3 text-end control-label col-form-label">Data do Vencimento</label>
+                        <div class="col-sm-9">
+                            <input type="date" class="form-control" id="vencimento" name="vencimento" value="@Model.Vencimento.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture)">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="cono1"
+                               class="col-sm-3 text-end control-label col-form-label">Finalidade</label>
+                        <div class="col-sm-9">
+                            <textarea class="form-control" placeholder="digite aqui a finalidade do software" id="finalidade" name="finalidade">@Model.Finalidade</textarea>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="border-top">
+                    <div class="card-body">
+                        <button type="submit" class="btn btn-success text-white" value="gravar" name="submitButton">Gravar</button>
+                        <a href="/softwares/novo" class="btn btn-primary">Limpar</a>
+                        <a href="/softwares/" class="btn btn-danger text-white">Cancelar</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

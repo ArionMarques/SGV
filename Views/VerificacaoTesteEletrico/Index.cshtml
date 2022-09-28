@@ -1,0 +1,31 @@
+﻿
+@using Microsoft.AspNetCore.Http
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/css/PagedList.css" rel="stylesheet" />
+<form method="post" action="/verificacaotesteletrico/editar">
+    <div class="wrapper">
+        <!-- Page Content  -->
+        <div id="content">
+            <table class="table table-striped" id="tbUsuarios">
+                <thead>
+                    <tr>
+                        <th scope="col" class="table-venax">#</th>
+                        <th scope="col" class="table-venax">Instrumento</th>
+                        <th scope="col" class="table-venax">Fabricante</th>
+                        <th scope="col" class="table-venax">Situação</th>
+                        <th scope="col" class="table-venax">Ação</th>
+                        <th scope="col" class="table-venax">
+                            <a href="/verificacaotesteeletrico/novo">Novo</a>
+                        </th>
+                    </tr>
+                </thead>
+                
+            </table>
+            
+        </div>
+    </div>
+</form>

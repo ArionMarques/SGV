@@ -1,0 +1,196 @@
+﻿
+@{
+    ViewData["Title"] = "Relatorio";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link href="~/css/Usuario.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<form method="post">
+    <div class="wrapper">
+        <!-- Page Content  -->
+        <div id="content">
+            
+            <div class="grupo-entrada">
+                <div class="col-4">
+                    <div class="list-group" id="list-tab" role="tablist">
+                        <a class="list-group-item list-group-item-action ativo" id="list-menu-list" data-bs-toggle="list" href="#" role="tab" aria-controls="list-menu">Relatórios</a>
+                        <a class="list-group-item list-group-item-action active" id="list-informatica-list" data-bs-toggle="list" href="#list-informatica" role="tab" aria-controls="list-home">Total de chamados abertos por atendente</a>
+                        <a class="list-group-item list-group-item-action" id="list-comercial-list" data-bs-toggle="list" href="#list-comercial" role="tab" aria-controls="list-profile">Chamados por top 10 produtos</a>
+                        <a class="list-group-item list-group-item-action" id="list-producao-list" data-bs-toggle="list" href="#list-UF" role="tab" aria-controls="list-messages">Chamados por UF</a>
+                        <a class="list-group-item list-group-item-action" id="list-compras-list" data-bs-toggle="list" href="#list-abertos" role="tab" aria-controls="list-messages">Chamados abertos e não encerrados</a>
+                    </div>
+                </div>
+                <div class="col-8">
+                    <div class="tab-content" id="nav-tabContent">
+                        <div class="tab-pane fade show active" id="list-informatica" role="tabpanel" aria-labelledby="list-home-list">
+                            <div class="col-4">
+                                <canvas id="myChart" width="400" height="400"></canvas>
+                                <script>
+                                    const ctx = document.getElementById('myChart').getContext('2d');
+                                    const myChart = new Chart(ctx, {
+                                        type: 'bar',
+                                        data: {
+                                            labels: ["Wellington", "Rafaela", "Carla", "Ana Paula", "Thiago", "Jonas"],
+                                            datasets: [{
+                                                label: 'Total de chamados abertos por atendente',
+                                                data: [@ViewBag.AbertosWellington, @ViewBag.AbertosRafaela, @ViewBag.AbertosCarla, @ViewBag.AbertosAna, @ViewBag.AbertosThiago, @ViewBag.AbertosJonas],
+                                                backgroundColor: [
+                                                    'rgba(255, 99, 132, 0.2)',
+                                                    'rgba(54, 162, 235, 0.2)',
+                                                    'rgba(255, 206, 86, 0.2)',
+                                                    'rgba(75, 192, 192, 0.2)'
+                                                ],
+                                                borderColor: [
+                                                    'rgba(255, 99, 132, 1)',
+                                                    'rgba(54, 162, 235, 1)',
+                                                    'rgba(255, 206, 86, 1)',
+                                                    'rgba(75, 192, 192, 1)',
+                                                ],
+                                                borderWidth: 1
+                                            }]
+                                        },
+                                        options: {
+                                            scales: {
+                                                y: {
+                                                    beginAtZero: true
+                                                }
+                                            }
+                                        }
+                                    });
+                                </script>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="list-comercial" role="tabpanel" aria-labelledby="list-profile-list">
+                            <div class="col-4">
+                                <canvas id="myChart2" width="400" height="400"></canvas>
+                                <script>
+                                    const ctx2 = document.getElementById('myChart2').getContext('2d');
+                                    const myChart2 = new Chart(ctx2, {
+                                        type: 'pie',
+                                        data: {
+                                            labels: ['Vermelho', 'Azul', 'Amarelo'],
+                                            datasets: [{
+                                                label: 'Chamados por Atendente',
+                                                data: [22, 9, 31],
+                                                backgroundColor: [
+                                                    'rgba(108, 138, 186, 0.7)',
+                                                    'rgba(160, 169, 184, 0.7)',
+                                                    'rgba(199, 40, 191, 0.7)',
+                                                    'rgba(75, 192, 192, 0.7)',
+                                                    'rgba(153, 102, 255, 0.7)',
+                                                    'rgba(255, 159, 64, 0.7)'
+                                                ],
+                                                borderColor: [
+                                                    'rgba(255, 99, 132, 1)',
+                                                    'rgba(54, 162, 235, 1)',
+                                                    'rgba(255, 206, 86, 1)',
+                                                    'rgba(75, 192, 192, 1)',
+                                                    'rgba(153, 102, 255, 1)',
+                                                    'rgba(255, 159, 64, 1)'
+                                                ],
+                                                borderWidth: 1
+                                            }]
+                                        },
+                                        options: {
+                                            scales: {
+                                                y: {
+                                                    beginAtZero: true
+                                                }
+                                            }
+                                        }
+                                    });
+                                </script>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="list-UF" role="tabpanel" aria-labelledby="list-messages-list">
+                            <div class="col-4">
+                                <canvas id="myChart3" width="400" height="400"></canvas>
+                                <script>
+                                    const ctx3 = document.getElementById('myChart3').getContext('2d');
+                                    const myChart3 = new Chart(ctx3, {
+                                        type: 'bar',
+                                        data: {
+                                            labels: ['RS', 'SC', 'SP', 'RJ','PR','MG'],
+                                            datasets: [{
+                                                label: 'Chamados por UF',
+                                                data: [@ViewBag.RS, @ViewBag.SC, @ViewBag.SP, @ViewBag.RJ, @ViewBag.PR, @ViewBag.MG],
+                                                backgroundColor: [
+                                                    'rgba(255, 99, 132, 0.2)',
+                                                    'rgba(54, 162, 235, 0.2)',
+                                                    'rgba(255, 206, 86, 0.2)',
+                                                    'rgba(75, 192, 192, 0.2)',
+                                                    'rgba(153, 102, 255, 0.7)',
+                                                    'rgba(255, 159, 64, 0.7)'
+                                                ],
+                                                borderColor: [
+                                                    'rgba(255, 99, 132, 1)',
+                                                    'rgba(54, 162, 235, 1)',
+                                                    'rgba(255, 206, 86, 1)',
+                                                    'rgba(75, 192, 192, 1)',
+                                                    'rgba(153, 102, 255, 0.7)',
+                                                    'rgba(255, 159, 64, 0.7)'
+                                                ],
+                                                borderWidth: 1
+                                            }]
+                                        },
+                                        options: {
+                                            scales: {
+                                                y: {
+                                                    beginAtZero: true
+                                                }
+                                            }
+                                        }
+                                    });
+                                </script>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="list-abertos" role="tabpanel" aria-labelledby="list-settings-list">
+                            <div class="col-4">
+                                <canvas id="myChart4" width="250" height="250"></canvas>
+                                <script>
+                                    const ctx4 = document.getElementById('myChart4').getContext('2d');
+                                    const myChart4 = new Chart(ctx4, {
+                                        type: 'doughnut',
+                                        data: {
+                                            labels: ["Wellington", "Rafaela", "Carla", "Ana Paula", "Thiago", "Jonas"],
+                                            datasets: [{
+                                                label: 'OS Abertas não Encerradas',
+                                                data: [@ViewBag.Wellington, @ViewBag.Rafaela, @ViewBag.Carla, @ViewBag.Ana, @ViewBag.Thiago, @ViewBag.Jonas],
+                                                backgroundColor: [
+                                                    'rgba(108, 138, 186, 0.7)',
+                                                    'rgba(160, 169, 184, 0.7)',
+                                                    'rgba(199, 40, 191, 0.7)',
+                                                    'rgba(75, 192, 192, 0.7)',
+                                                    'rgba(153, 102, 255, 0.7)',
+                                                    'rgba(255, 159, 64, 0.7)'
+                                                ],
+                                                borderColor: [
+                                                    'rgba(255, 99, 132, 1)',
+                                                    'rgba(54, 162, 235, 1)',
+                                                    'rgba(255, 206, 86, 1)',
+                                                    'rgba(75, 192, 192, 1)',
+                                                    'rgba(153, 102, 255, 1)',
+                                                    'rgba(255, 159, 64, 1)'
+                                                ],
+                                                borderWidth: 1
+                                            }]
+                                        },
+                                        options: {
+                                            scales: {
+                                                y: {
+                                                    beginAtZero: true
+                                                }
+                                            }
+                                        }
+                                    });
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+

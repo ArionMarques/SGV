@@ -1,0 +1,156 @@
+﻿@model SGV.Models.RecursosHumanos.AlteracaoFuncional
+@using System.Globalization
+@{
+    ViewData["Title"] = "Novo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/css/Qualidade/RNC.css" rel="stylesheet" />
+<!--Início do cadastro de RNC-->
+<form method="post" action="/SolicitacaoUsuario/Salvar">
+    <div class="conteudo-inf-pessoais">
+        <div class="primeiro-box-editar">
+
+            <div class="card">
+
+                <div class="card-body">
+                    <h5 class="card-title">Relatório de Não conformidade</h5>
+                    <br />
+                    <div class="form-group row">
+                        <label for="Data_Comeco"
+                               class="coluna-label-resposta-terceiro-box-primeira">Origem:</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="Data_Comeco" value="Interno" name="Data_Comeco" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="Data_Comeco"
+                               class="coluna-label-resposta-terceiro-box-primeira">Classificação:</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="Data_Comeco" value="Auditoria" name="Data_Comeco" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="Data_Comeco"
+                               class="coluna-label-resposta-terceiro-box-primeira">Resultado:</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="Data_Comeco" value="Não conformidade menor" name="Data_Comeco" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="Data_Comeco"
+                               class="coluna-label-resposta-terceiro-box-primeira">Requisito da norma:</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="Data_Comeco" value="12345" name="Data_Comeco" readonly>
+                        </div>
+                    </div>
+                </div>
+                <div class="border-top">
+                    <div class="card-body">
+                        <button type="submit" class="btn btn-success text-white" value="gravar" name="submitButton">Gravar</button>
+                        <a href="/solicitacaousuario/novo" class="btn btn-primary">Limpar</a>
+                        <a href="/solicitacaousuario/" class="btn btn-danger text-white">Cancelar</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="segundo-box-editar">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <div class="form-group row">
+                        <label for="Data_Comeco"
+                               class="coluna-label-resposta-terceiro-box-segunda">Setor/Fornecedor/Cliente:</label>
+                        <div class="col-sm-9-segundo-box">
+                            <input type="text" class="form-control-segundo-box" id="Data_Comeco" value="Produção" name="Data_Comeco" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="Data_Comeco"
+                               class="coluna-label-resposta-terceiro-box-segunda">Responsável/Reclamante:</label>
+                        <div class="col-sm-9-segundo-box">
+                            <input type="text" class="form-control-segundo-box" id="Data_Comeco" value="Laurete" name="Data_Comeco" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="Data_Comeco"
+                               class="coluna-label-resposta-terceiro-box-segunda">Produto:</label>
+                        <div class="col-sm-9-segundo-box">
+                            <input type="text" class="form-control-segundo-box" id="Data_Comeco" value="Fogão a Lenha" name="Data_Comeco" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="Data_Comeco"
+                               class="coluna-label-resposta-terceiro-box-segunda">Nº NF:</label>
+                        <div class="col-sm-9-segundo-box">
+                            <input type="text" class="form-control-segundo-box" id="Data_Comeco" value="12345" name="Data_Comeco" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group row" style="margin-left:1.8%">
+                        <h7>Descrição da Não Confirmadade</h7>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-9">
+                            <textarea class="box-obs" id="observacoes" name="observacoes" readonly>Apenas um Exemplo do Texto que poderia ser escrito</textarea>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="terceiro-box-editar">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <div class="form-group row">
+                        <div class="check-box">
+                            <input class="form-check-input" type="checkbox" value="true" id="Ramal" name="Ramal">
+                            <label class="col-sm-3 text-end control-label coluna-label-resposta-terceiro-box" for="flexCheckChecked">
+                                A Não Confirmidade Procede
+                            </label>
+                        </div>
+                        <div class="col-sm-9-terceiro-box">
+                            <textarea class="box-obs-terceiro-box" id="observacoes" placeholder="Justifique caso não concorde com a não conformidade" name="observacoes"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="check-box">
+                            <label class="col-sm-3 text-end control-label coluna-label-resposta-terceiro-box" for="flexCheckChecked">
+                                Ação de Contenção
+                            </label>
+                        </div>
+                        <div class="col-sm-9-terceiro-box">
+                            <textarea class="box-obs-terceiro-box" id="observacoes" placeholder="Justifique caso não concorde com a não conformidade" name="observacoes"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="check-box">
+                            <label class="col-sm-3 text-end control-label coluna-label-resposta-terceiro-box" for="flexCheckChecked">
+                                Ações a serem Executadas
+                            </label>
+                        </div>
+                        <div class="col-sm-9-terceiro-box">
+                            <textarea class="box-obs-terceiro-box" id="observacoes" placeholder="Justifique caso não concorde com a não conformidade" name="observacoes"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="Data_Comeco"
+                               class="coluna-label-resposta-terceiro-box-primeira">Reponsável:</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="Data_Comeco" placeholder="digite o nome do responsável pela ação" name="Data_Comeco">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="Data_Comeco"
+                               class="coluna-label-resposta-terceiro-box-primeira">Prazo:</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="Data_Comeco" placeholder="digite o prazo para atendimento" name="Data_Comeco">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</form>
+

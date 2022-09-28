@@ -1,0 +1,118 @@
+﻿@model SGV.Models.RecursosHumanos.AlteracaoFuncional
+@using System.Globalization
+@{
+    ViewData["Title"] = "Novo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/css/Qualidade/RNC.css" rel="stylesheet" />
+<!--Início do cadastro de RNC-->
+<form method="post" action="/SolicitacaoUsuario/Salvar">
+    <div class="conteudo-inf-pessoais">
+        <div class="primeiro-box-cadastrar">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Relatório de Não conformidade</h5>
+                    <br />
+                    <div class="form-group row">
+                        <label class="col-sm-3 text-end control-label col-form-label">Origem</label>
+                        <div class="col-md-9">
+                            <select class="select2 form-select shadow-none" id="setor" name="setor" style="width: 100%; height:1.5em;">
+                                <option>Selecione</option>
+                                <option value="VEN" id="setor">Interno</option>
+                                <option value="PE">Fornecedor</option>
+                                <option value="PEC">Cliente</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="local" class="col-sm-3 text-end control-label col-form-label">
+                            Classificação
+                        </label>
+                        <div class="col-md-9">
+                            <select class="select2 form-select shadow-none" id="setor" name="setor" style="width: 100%; height:1.5em;">
+                                <option>Selecione</option>
+                                <option value="VEN" id="setor">Ações Corretivas</option>
+                                <option value="PE">Ações Preventivas</option>
+                                <option value="PEC">Auditoria</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="local" class="col-sm-3 text-end control-label col-form-label">
+                            Resultado
+                        </label>
+                        <div class="col-md-9">
+                            <select class="select2 form-select shadow-none" id="setor" name="setor" style="width: 100%; height:1.5em;">
+                                <option>Selecione</option>
+                                <option value="VEN" id="setor">Não Conformidade Maior</option>
+                                <option value="PE">Não Conformidade Menor</option>
+                                <option value="PEC">Observação</option>
+                                <option value="MP">Oportunidade de Melhoria</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="Data_Comeco"
+                               class="col-sm-3 text-end control-label col-form-label">Requisito da Norma</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="Data_Comeco" placeholder="digite o número do requisito" name="Data_Comeco">
+                        </div>
+                    </div>
+                </div>
+                <div class="border-top">
+                    <div class="card-body">
+                        <button type="submit" class="btn btn-success text-white" value="gravar" name="submitButton">Gravar</button>
+                        <a href="/solicitacaousuario/novo" class="btn btn-primary">Limpar</a>
+                        <a href="/solicitacaousuario/" class="btn btn-danger text-white">Cancelar</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="segundo-box-cadastrar">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <div class="form-group row">
+                        <label for="Data_Comeco"
+                               class="col-sm-3 text-end control-label col-form-label">Setor/Fornecedor/Cliente</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="Data_Comeco" placeholder="setor/fornecedor/cliente que recebeu a não conformidade" name="Data_Comeco">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="Data_Comeco"
+                               class="col-sm-3 text-end control-label col-form-label">Responsável/Reclamante</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="Data_Comeco" placeholder="digite o número do requisito da norma" name="Data_Comeco">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="Data_Comeco"
+                               class="col-sm-3 text-end control-label col-form-label">Produto</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="Data_Comeco" placeholder="digite o número do requisito da norma" name="Data_Comeco">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="Data_Comeco"
+                               class="col-sm-3 text-end control-label col-form-label">NF nº</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="Data_Comeco" placeholder="digite o número do requisito da norma" name="Data_Comeco">
+                        </div>
+                    </div>
+                    <div class="form-group row" style="margin-left:1.8%">
+                        <h6>Descrição da Não Confirmadade</h6>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-9">
+                            <textarea class="box-obs" placeholder="digite aqui qualquer informação adicional" id="observacoes" name="observacoes"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</form>
+

@@ -1,0 +1,49 @@
+﻿@model X.PagedList.IPagedList<SGV.Models.SolicitacaoUsuario>
+@using X.PagedList.Mvc.Core;
+@using X.PagedList;
+@using Microsoft.AspNetCore.Http
+@{
+    ViewData["Title"] = "Solicitações de acesso";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/css/PagedList.css" rel="stylesheet" />
+<form method="post" action="/softwares/editar">
+    <div class="wrapper">
+        <!-- Page Content  -->
+        <div id="content">
+            <table class="table table-striped" id="tbUsuarios">
+                <thead>
+                    <tr>
+                        <th scope="col" class="table-venax">#</th>
+                        <th scope="col" class="table-venax">Nome do Usuario</th>
+                        <th scope="col" class="table-venax">Solicitante</th>
+                        <th scope="col" class="table-venax">Status</th>
+                        <th scope="col" class="table-venax">Ação</th>
+                        <th scope="col" class="table-venax">
+                            <a href="/solicitacaousuario/novo">Novo</a>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var solicitacoes in Model)
+                    {
+                    <tr>
+                        <td>@solicitacoes.Id</td>
+                        <td>@solicitacoes.Nome</td>
+                        <td>@solicitacoes.OperadorSolicitacao</td>
+                        <td>Aberto</td>
+                        <td>
+                            <a href="/solicitacaousuario/visualizar/@solicitacoes.Id" class="btn">Visualizar</a>
+                            <a href="/solicitacaousuario/editar/@solicitacoes.Id" class="btn">Editar</a>
+                        </td>
+                        <td></td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+            @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))
+        </div>
+    </div>
+</form>
+

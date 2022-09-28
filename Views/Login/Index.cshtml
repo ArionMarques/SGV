@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+<link href="~/css/Usuario.css" rel="stylesheet" />
+<link href="~/css/login.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+<form method="post" action="/login/index">
+    <div style="padding-left: 10%; padding-right: 10%; text-align:center">
+        @if (ViewBag.Mensagem != null)
+        {
+            <div class="alert alert-danger" role="alert">
+                @ViewBag.Mensagem
+            </div>
+        }
+    </div>
+    <div id="container">
+        <div class="operador">
+            <img src="~/pics/user.svg" class="alinhamento-icones" />
+            <label for="codusuario" class="alinhamento-texto">Usuário</label>
+            <input id="codusuario" name="codusuario" placeholder="Digite seu usuário" class="alinhamento-operador">
+            <label class="label-texto">@Html.ValidationMessage("CodUsuario")</label>
+        </div>
+        <div class="senha">
+            <img src="~/pics/lock.svg" class="alinhamento-icones" />
+            <label for="senha" class="alinhamento-texto">Senha</label>
+            <input type="password" id="senha" name="senha" placeholder="Digite sua senha" class="alinhamento-senha">
+            <label class="label-texto">@Html.ValidationMessage("Senha")</label>
+        </div>
+        <div class="botao">
+
+            <button type="submit" id="sidebarCollapse" class="button">Login</button>
+        </div>
+    </div>
+
+</form>

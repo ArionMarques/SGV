@@ -1,0 +1,155 @@
+﻿
+@{
+    ViewData["Title"] = "Responder";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/css/Qualidade/RNC/principal.css" rel="stylesheet" />
+<div class="box-container">
+    <div class="box-titulo">
+        <h5 class="card-title">Relatório de Não conformidade</h5>
+    </div>
+    <div class="box-conteudo">
+        <div class="box">
+            <div class="linha-conteudo linha">
+                <label for="Origem" class="definicoes-label">Origem:</label>
+                <div class="coluna-input">
+                    <input type="text" class="definicoes-input" id="Origem" value="Interno" name="Origem" readonly>
+                </div>
+            </div>
+            <div class="linha-conteudo linha">
+                <label for="Data_Comeco" class="definicoes-label">Classificação:</label>
+                <div class="coluna-input">
+                    <input type="text" class="definicoes-input" id="Data_Comeco" value="Auditoria" name="Data_Comeco" readonly>
+                </div>
+            </div>
+            <div class="linha-conteudo linha">
+                <label for="Data_Comeco" class="definicoes-label">Resultado:</label>
+                <div class="coluna-input">
+                    <input type="text" class="definicoes-input" id="Data_Comeco" value="Não conformidade menor" name="Data_Comeco" readonly>
+                </div>
+            </div>
+            <div class="linha-conteudo linha">
+                <label for="Data_Comeco" class="definicoes-label">Requisito da norma:</label>
+                <div class="coluna-input">
+                    <input type="text" class="definicoes-input" id="Data_Comeco" value="12345" name="Data_Comeco" readonly>
+                </div>
+            </div>
+            <div class="linha-conteudo linha">
+                <label for="Data_Comeco" class="definicoes-label">Setor/Fornecedor/Cliente:</label>
+                <div class="coluna-input">
+                    <input type="text" class="definicoes-input" id="Data_Comeco" value="Produção" name="Data_Comeco" readonly>
+                </div>
+            </div>
+            <div class="linha-conteudo linha">
+                <label for="Data_Comeco" class="definicoes-label">Responsável Reclamante:</label>
+                <div class="coluna-input">
+                    <input type="text" class="definicoes-input" id="Data_Comeco" value="Laurete" name="Data_Comeco" readonly>
+                </div>
+            </div>
+            <div class="linha-conteudo linha">
+                <label for="Data_Comeco" class="definicoes-label">Produto:</label>
+                <div class="coluna-input">
+                    <input type="text" class="definicoes-input" id="Data_Comeco" value="Fogão a lenha" name="Data_Comeco" readonly>
+                </div>
+            </div>
+            <div class="linha-conteudo linha">
+                <label for="Data_Comeco" class="definicoes-label">Número NF:</label>
+                <div class="coluna-input">
+                    <input type="text" class="definicoes-input" id="Data_Comeco" value="45675" name="Data_Comeco" readonly>
+                </div>
+            </div>
+            <div class="linha-conteudo linha" style="margin-left:1.8%; margin-top:8%">
+                <h7>Descrição da Não Confirmadade</h7>
+            </div>
+            <div class="form-group row">
+                <div class="coluna-textarea">
+                    <textarea class="box-obs" id="observacoes" name="observacoes" readonly>Apenas um Exemplo do Texto que poderia ser escrito</textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="segundo-box">
+            <div class="linha-conteudo-terceiro linha">
+                <div class="check-box">
+                    <input class="form-check-input" type="checkbox" value="true" id="Ramal" name="Ramal">
+                    <label class="label-terceirobox" for="flexCheckChecked">
+                        A Não Confirmidade Procede
+                    </label>
+                </div>
+                <div class="coluna-terceiro-box">
+                    <textarea class="box-justificativa" id="observacoes" placeholder="Justifique caso não concorde com a não conformidade" name="observacoes"></textarea>
+                </div>
+            </div>
+            <div class="linha-conteudo-terceiro linha">
+                <div class="check-box">
+                    <label class="label-terceirobox" for="flexCheckChecked">
+                        Ação de Contenção
+                    </label>
+                </div>
+                <div class="col-sm-9-terceiro-box">
+                    <textarea class="box-justificativa" id="observacoes" placeholder="Ações tomadas para sessar a não conformidade" name="observacoes"></textarea>
+                </div>
+            </div>
+            <div class="linha-conteudo-terceiro linha">
+                <div class="check-box">
+                    <label class="label-terceirobox" for="flexCheckChecked">
+                        Causas da Não Conformidade
+                    </label>
+                </div>
+                <div class="col-sm-9-terceiro-box">
+                    <textarea class="box-justificativa" id="observacoes" placeholder="O que causou a não conformidade" name="observacoes"></textarea>
+                </div>
+            </div>
+            <div class="linha-conteudo linha">
+                <div class="check-box">
+                    <label class="label-terceirobox" for="flexCheckChecked">
+                        Ações a serem executadas
+                    </label>
+                </div>
+                <div class="col-sm-9-terceiro-box">
+                    <textarea class="box-justificativa" id="observacoes" placeholder="Ações que ainda serão executadas" name="observacoes"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="terceiro-box">
+            <div class="linha-conteudo-terceiro-box linha">
+                <label for="Origem" class="definicoes-label">Responsavel pela análise:</label>
+                <div class="coluna-input">
+                    <input type="text" class="definicoes-input" id="Origem" placeholder="Nome do responsável pela análise" name="Origem">
+                </div>
+            </div>
+            <div class="linha-conteudo-terceiro-box linha"  >
+                <div class="check-box-terceiro-box">
+                    <label class="label-terceirobox" for="flexCheckChecked">
+                        Análise da Implementação das Ações(Evidências)
+                    </label>
+                </div>
+                <div class="col-sm-9-terceiro-box">
+                    <textarea class="box-justificativa" id="observacoes" placeholder="Digite as evidências das ações implementadas" name="observacoes"></textarea>
+                </div>
+            </div>
+            <div class="linha-conteudo-terceiro-box linha">
+                <label for="Origem" class="definicoes-label">Responsavel pela análise:</label>
+                <div class="coluna-input">
+                    <input type="text" class="definicoes-input" id="Origem" placeholder="Nome do responsável pela análise" name="Origem">
+                </div>
+            </div>
+            <div class="linha-conteudo-terceiro-box linha">
+                <div class="check-box-terceiro-box">
+                    <label class="label-terceirobox" for="flexCheckChecked">
+                        Análise da Eficácia das Ações(Evidências)
+                    </label>
+                </div>
+                <div class="col-sm-9-terceiro-box">
+                    <textarea class="box-justificativa" id="observacoes" placeholder="Digite as evidências da eficácia das ações" name="observacoes"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="box-botoes">
+        <button type="submit" class="btn btn-success text-white" value="gravar" name="submitButton">Gravar</button>
+        <a href="/solicitacaousuario/novo" class="btn btn-primary">Limpar</a>
+        <a href="/solicitacaousuario/" class="btn btn-danger text-white">Cancelar</a>
+    </div>
+</div>
+

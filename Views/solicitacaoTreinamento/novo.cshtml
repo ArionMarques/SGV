@@ -1,0 +1,75 @@
+﻿@model SGV.Models.RecursosHumanos.solicitacaoTreinamento
+@{
+    ViewData["Title"] = "Novo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/css/solicitacaoTreinamento.css" rel="stylesheet" />
+<!--Início do cadastro de solicitação de acesso-->
+<form method="post" action="/solicitacaotreinamento/Salvar">
+    <div class="conteudo">
+        <div class="box-solicitacao">
+            <div class="box-borda">
+                <div class="card-body">
+                    <h5 class="card-title">Solicitação de Treinamento</h5>
+                    <div class="form-group row">
+                        <label for="fname"
+                               class="col-sm-3 text-end control-label col-form-label">Curso / Treinamento</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="nomeFuncionario" placeholder="Digite o nome do curso ou treinamento" name="nomeFuncionario">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="fname"
+                               class="col-sm-3 text-end control-label col-form-label">Entidade / Instrutor</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="nomeFuncionario" placeholder="Digite o nome da entidade ou instrutor" name="nomeFuncionario">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="fname"
+                               class="col-sm-3 text-end control-label col-form-label">Local do Treinamento</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="nomeFuncionario" placeholder="Digite o local onde será o treinamento" name="nomeFuncionario">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="fname"
+                               class="col-sm-3 text-end control-label col-form-label">Carga Horária</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="nomeFuncionario" placeholder="Digite a carga horária do curso" name="nomeFuncionario">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="Data_Comeco"
+                               class="col-sm-3 text-end control-label col-form-label">Data de Início</label>
+                        <div class="col-sm-9">
+                            <input type="date" class="form-control" id="dataSolicitacao" placeholder="digite a data do começo do curso" name="dataSolicitacao">
+                        </div>
+                    </div><div class="form-group row">
+                        <label for="Data_Comeco"
+                               class="col-sm-3 text-end control-label col-form-label">Data Término</label>
+                        <div class="col-sm-9">
+                            <input type="date" class="form-control" id="dataSolicitacao" placeholder="digite a data de término do curso" name="dataSolicitacao">
+                        </div>
+                    </div>
+                    <div class="form-group row" style="margin-left:1.8%">
+                        <h6>Justificativa</h6>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-9">
+                            <textarea class="box-obs" placeholder="justifique por qual motivo você gostaria de participar do evento e quais são os resultados esperados" id="observacoes" name="observacoes"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="border-top">
+                    <div class="card-body">
+                        <button type="submit" class="btn btn-success text-white" value="gravar" name="submitButton">Gravar</button>
+                        <a href="/alteracaofuncional/novo" class="btn btn-primary">Limpar</a>
+                        <a href="/alteracaofuncional/" class="btn btn-danger text-white">Cancelar</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</form>

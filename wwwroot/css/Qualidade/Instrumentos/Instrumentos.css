@@ -1,0 +1,335 @@
+﻿/*Para telas menores*/
+@media (max-width: 1366px) {
+    .box-container {
+        display: inline-block;
+        width: 98%;
+        height: 82%;
+        position: absolute;
+        margin-left: 1%;
+        overflow: hidden;
+        margin-top: -25px;
+    }
+
+    .box-titulo {
+        margin-top: 0%;
+        font-size: 0.8rem;
+        line-height: 0.8;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: .25rem;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        width: 100%;
+        height: 8%;
+        border: 1px #e9e7e7 solid;
+        display: block;
+        padding-left: 40%;
+        padding-top: 0.8%;
+    }
+
+    .box-conteudo {
+        margin-top: 15px;
+        display: inline-block;
+        width: 100%;
+        height: 75%;
+    }
+
+    .primeiro-box {
+        width: 49.5%;
+        padding-top: 35px;
+        font-size: 0.8rem;
+        line-height: 0.8;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: .25rem;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        height: 100%;
+        float: left;
+        position: relative;
+    }
+
+    .segundo-box {
+        width: 49.5%;
+        padding: .375rem .75rem;
+        font-size: 0.8rem;
+        line-height: 0.8;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: .25rem;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        height: 100%;
+        float: right;
+        position: relative;
+    }
+
+    .box-terceiro {
+        width: 30%;
+        padding: .375rem .75rem;
+        font-size: 0.8rem;
+        line-height: 0.8;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: .25rem;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        height: 100%;
+    }
+
+    .box-botoes {
+        margin-top: 2px;
+        font-size: 0.8rem;
+        line-height: 0.8;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: .25rem;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        width: 100%;
+        height: 12%;
+        border: 1px #e9e7e7 solid;
+        display: block;
+        padding-left: 40%;
+        padding-top: 1%;
+    }
+
+    .conteudos-linha {
+        margin-left: 3%;
+        height: 30px;
+        font-size: 0.8rem;
+        width: 42%;
+        display: flex;
+    }
+
+    .coluna-label {
+        margin-bottom: 0;
+        line-height: 0.8;
+        -ms-flex: 0 0 25%;
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+
+    .coluna-input {
+        -ms-flex: 0 0 60%;
+        flex: 0 0 60%;
+        max-width: 60%;
+    }
+
+    .input-dados {
+        display: block;
+        width: 100%;
+        padding: .375rem .75rem;
+        font-size: 0.8rem;
+        line-height: 0.8;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: .25rem;
+        height: 1.8em;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    }
+
+        .input-dados:disabled, .input-dados[readonly] {
+            background-color: #e9ecef;
+            opacity: 1;
+        }
+
+    .select-dados {
+        display: block;
+        width: 100%;
+        padding: .375rem .75rem;
+        font-size: 0.8rem;
+        line-height: 0.8;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: .25rem;
+        height: 2.2em !important;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    }
+}
+/*para telas maiores*/
+@media (min-width: 1367px) {
+    .box-container {
+        display: inline-block;
+        width: 98%;
+        height: 82%;
+        position: absolute;
+        margin-left: 1%;
+        overflow: hidden;
+        margin-top: -25px;
+    }
+
+    .box-titulo {
+        margin-top: 0%;
+        font-size: 0.8rem;
+        line-height: 0.8;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: .25rem;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        width: 100%;
+        height: 8%;
+        border: 1px #e9e7e7 solid;
+        display: block;
+        padding-left: 40%;
+        padding-top: 0.8%;
+    }
+
+    .box-conteudo {
+        margin-top: 15px;
+        display: inline-block;
+        width: 100%;
+        height: 75%;
+    }
+
+    .box {
+        width: 30%;
+        padding-top: 35px;
+        font-size: 0.8rem;
+        line-height: 0.8;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: .25rem;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        height: 100%;
+        margin-left:auto;
+        margin-right:auto;
+        position: relative;
+    }
+
+    .primeiro-box {
+        width: 49.5%;
+        padding-top: 35px;
+        font-size: 0.8rem;
+        line-height: 0.8;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: .25rem;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        height: 100%;
+        float: left;
+        position: relative;
+    }
+
+    .segundo-box {
+        width: 49.5%;
+        padding: .375rem .75rem;
+        font-size: 0.8rem;
+        line-height: 0.8;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: .25rem;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        height: 100%;
+        float: right;
+        position: relative;
+    }
+
+    .box-terceiro {
+        width: 30%;
+        padding: .375rem .75rem;
+        font-size: 0.8rem;
+        line-height: 0.8;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: .25rem;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        height: 100%;
+    }
+
+    .box-botoes {
+        margin-top: 15px;
+        font-size: 0.8rem;
+        line-height: 0.8;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: .25rem;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        width: 100%;
+        height: 12%;
+        border: 1px #e9e7e7 solid;
+        display: block;
+        padding-left: 40%;
+        padding-top: 1%;
+    }
+
+    .conteudos-linha {
+        margin-left: auto;
+        margin-right:auto;
+        height: 30px;
+        font-size: 0.8rem;
+        width: 85%;
+        display: flex;
+        margin-top: 1%;
+    }
+
+    .coluna-label {
+        margin-bottom: 0;
+        line-height: 0.8;
+        -ms-flex: 0 0 25%;
+        flex: 0 0 35%;
+        max-width: 35%;
+    }
+
+    .coluna-input {
+        -ms-flex: 0 0 40%;
+        flex: 0 0 55%;
+        max-width: 55%;
+    }
+
+    .input-dados {
+        display: block;
+        width: 100%;
+        padding: .375rem .75rem;
+        font-size: 0.8rem;
+        line-height: 0.8;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: .25rem;
+        height: 2.2em;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    }
+
+        .input-dados:disabled, .input-dados[readonly] {
+            background-color: #e9ecef;
+            opacity: 1;
+        }
+
+    .select-dados {
+        display: block;
+        width: 100%;
+        padding: .375rem .75rem;
+        font-size: 0.8rem;
+        line-height: 0.8;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: .25rem;
+        height: 2.2em;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    }
+}

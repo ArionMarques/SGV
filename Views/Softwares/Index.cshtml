@@ -1,0 +1,47 @@
+﻿@model X.PagedList.IPagedList<SGV.Models.Softwares>
+@using X.PagedList.Mvc.Core;
+@using X.PagedList;
+@using Microsoft.AspNetCore.Http
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/css/PagedList.css" rel="stylesheet" />
+<form method="post" action="/softwares/editar">
+    <div class="wrapper">
+        <!-- Page Content  -->
+        <div id="content">
+            <table class="table table-striped" id="tbUsuarios">
+                <thead>
+                    <tr>
+                        <th scope="col" class="table-venax">#</th>
+                        <th scope="col" class="table-venax">Nome do Software/ Licença</th>
+                        <th scope="col" class="table-venax">Responsável</th>
+                        <th scope="col" class="table-venax">Ação</th>
+                        <th scope="col" class="table-venax">
+                            <a href="/softwares/novo">Novo</a>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var softwares in Model)
+                    {
+                        <tr>
+                            <td>@softwares.ID</td>
+                            <td>@softwares.Nome</td>
+                            <td>@softwares.Responsavel</td>
+                            <td>
+                                <a href="/softwares/visualizar/@softwares.ID" class="btn">Visualizar</a>
+                                <a href="/softwares/editar/@softwares.ID" class="btn">Editar</a>
+                            </td>
+                            <td></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))
+        </div>
+    </div>
+</form>
+

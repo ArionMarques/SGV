@@ -1,0 +1,110 @@
+﻿@model SGV.Models.RecursosHumanos.AlteracaoFuncional
+@using Microsoft.AspNetCore.Http
+@using System.Globalization
+@{
+    ViewData["Title"] = "Novo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/css/AlreacaoFuncional.css" rel="stylesheet" />
+<!--Início do cadastro de solicitação de acesso-->
+<form method="post" action="/alteracaofuncional/Salvar">
+    <div class="conteudo-inf-pessoais">
+        <div class="primeiro-box-cadastrar">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Solicitação de Alteração Funcional</h5>
+                    <div class="form-group row">
+                        <label for="fname"
+                               class="col-sm-3 text-end control-label col-form-label">Nome Completo</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="Nome" name="nome" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="fname"
+                               class="col-sm-3 text-end control-label col-form-label">Setor de Origem</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="Nome" name="nome" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="fname"
+                               class="col-sm-3 text-end control-label col-form-label">Função de Origem</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="Nome" name="nome" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="fname"
+                               class="col-sm-3 text-end control-label col-form-label">Cargo de Origem</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="Nome" name="nome" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="Data_Comeco"
+                               class="col-sm-3 text-end control-label col-form-label">Início das atividades</label>
+                        <div class="col-sm-9">
+                            <input type="date" class="form-control" id="Data_Comeco" name="Data_Comeco" readonly>
+                        </div>
+                    </div>
+                </div>
+                <div class="border-top">
+                    <div class="card-body">
+                        <button type="submit" class="btn btn-success text-white" value="gravar" name="submitButton">Gravar</button>
+                        <a href="/alteracaofuncional/novo" class="btn btn-primary">Limpar</a>
+                        <a href="/alteracaofuncional/" class="btn btn-danger text-white">Cancelar</a>
+                        <a href="/alteracaofuncional/editar/" class="btn btn-info">Editar</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="segundo-box-solicitar">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <div class="form-group row">
+                        <label for="local" class="col-sm-3 text-end control-label col-form-label">
+                            Setor de destino
+                        </label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" id="Nome" name="nome" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="local" class="col-sm-3 text-end control-label col-form-label">
+                            Função de destino
+                        </label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" id="Nome" name="nome" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="local" class="col-sm-3 text-end control-label col-form-label">
+                            Cargo de destino
+                        </label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" id="Nome" name="nome" readonly>
+                        </div>
+                    </div>
+                    <div class="check-box">
+                        <input class="form-check-input" type="checkbox" value="true" id="AcessoInternet" name="AcessoInternet" readonly>
+                        <label class="col-form-label" for="flexCheckChecked">
+                            Alterações efetivadas
+                        </label>
+                    </div>
+                    <div class="form-group row" style="margin-left:1.8%" readonly>
+                        <h6>Observações</h6>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-9">
+                            <textarea class="box-obs" id="observacoes" name="observacoes"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</form>

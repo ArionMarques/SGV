@@ -1,0 +1,67 @@
+﻿@{
+    ViewData["Title"] = "Novo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/css/Qualidade/Instrumentos/Instrumentos.css" rel="stylesheet" />
+<div class="box-container">
+    <div class="box-titulo">
+        <!--Box com o título-->
+        <h5 class="card-title">Calibração de Instrumentos</h5>
+    </div>
+    <div class="box-conteudo">
+        <!--começo do box com conteúdo-->
+        <div class="box">
+            <!--Começo do primeiro Box-->
+
+            <div class="conteudos-linha">
+                <label for="Data_Comeco" class="coluna-label">Data da Calibração:</label>
+                <div class="coluna-input">
+                    <input type="date" class="input-dados" id="Data_Comeco" name="Data_Comeco" readonly value="2022-01-17">
+                </div>
+            </div>
+            <div class="conteudos-linha">
+                <label for="Data_Comeco" class="coluna-label">Entidade Prestadora do Serviço:</label>
+                <div class="coluna-input">
+                    <input type="text" class="input-dados" id="Data_Comeco" name="Data_Comeco" readonly value="Tabajara Corp">
+                </div>
+            </div>
+            <div class="conteudos-linha">
+                <label for="Data_Comeco" class="coluna-label">Número do Certificado:</label>
+                <div class="coluna-input">
+                    <input type="text" class="input-dados" id="Data_Comeco" name="Data_Comeco" readonly value="45678">
+                </div>
+            </div>
+            <div class="conteudos-linha">
+                <label for="Data_Comeco" class="coluna-label">Desvio EI + IM:</label>
+                <div class="coluna-input">
+                    <input type="text" class="input-dados" id="Data_Comeco" name="Data_Comeco" readonly>
+                </div>
+            </div>
+            <div class="conteudos-linha">
+                <label for="Data_Comeco" class="coluna-label">Laudo:</label>
+                <div class="coluna-input">
+                <input type="text" class="input-dados" id="Data_Comeco" name="Data_Comeco" readonly value="Aprovado"> 
+                </div>
+            </div>
+            <div class="conteudos-linha">
+                <label for="Data_Comeco" class="coluna-label">Disposição:</label>
+                <div class="coluna-input">
+                    <input type="text" class="input-dados" id="Data_Comeco" name="Data_Comeco" readonly>
+                </div>
+            </div>
+            <div class="conteudos-linha">
+                <label for="Data_Comeco" class="coluna-label">Responsável:</label>
+                <div class="coluna-input">
+                    <input type="text" class="input-dados" id="Data_Comeco" name="Data_Comeco" readonly value="laurete">
+                </div>
+            </div>
+        </div><!--Final do primeiro box-->
+    </div><!--Final do box com o conteúdo-->
+    <div class="box-botoes">
+        <!--Começo do Box com os botões-->
+        <button type="submit" class="btn btn-success text-white" value="gravar" name="submitButton">Gravar</button>
+        <a href="/Instrumentos/novo" class="btn btn-primary">Limpar</a>
+        <a href="/Instrumentos/" class="btn btn-danger text-white">Cancelar</a>
+    </div><!--Final do Box dos Botões-->
+</div>

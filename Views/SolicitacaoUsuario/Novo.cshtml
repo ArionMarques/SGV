@@ -1,0 +1,215 @@
+﻿@model SGV.Models.SolicitacaoUsuario
+@using Microsoft.AspNetCore.Http
+@using System.Globalization
+@{
+    ViewData["Title"] = "Novo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!--Início do cadastro de solicitação de acesso-->
+<form method="post" action="/SolicitacaoUsuario/Salvar">
+    <div class="conteudo-inf-pessoais">
+        <div class="primeiro-box-cadastrar">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Informações do Usuário</h4>
+                    <div class="form-group row">
+                        <label for="fname"
+                               class="col-sm-3 text-end control-label col-form-label">Nome Completo</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="Nome" placeholder="Digite o nome usuário" name="nome">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-3 mt-3">Setor</label>
+                        <div class="col-md-9">
+                            <select class="select2 form-select shadow-none" id="setor" name="setor" style="width: 100%; height:36px;">
+                                <option>Selecione</option>
+                                <optgroup label="Comercial">
+                                    <option value="VEN" id="setor">Vendas</option>
+                                    <option value="PE">Pedidos</option>
+                                    <option value="PEC">Peças</option>
+                                    <option value="MP">Marketplace</option>
+                                </optgroup>
+                                <optgroup label="Compras">
+                                    <option value="COM">Compras</option>
+                                </optgroup>
+                                <optgroup label="Contabilidade">
+                                    <option value="CTB">Contabilidade</option>
+                                </optgroup>
+                                <optgroup label="Engenharia">
+                                    <option value="PED">Projeto e Desenvolvimento</option>
+                                    <option value="ST">Sala Técnica</option>
+                                    <option value="MTZ">Matrizaria</option>
+                                </optgroup>
+                                <optgroup label="Expedição">
+                                    <option value="EXP">Expedição</option>
+                                </optgroup>
+                                <optgroup label="Faturamento">
+                                    <option value="FAT">Emissão de notas fiscais</option>
+                                </optgroup>
+                                <optgroup label="Financeiro">
+                                    <option value="CAP">Contas a Pagar</option>
+                                    <option value="CAR">Contas a Receber</option>
+                                </optgroup>
+                                <optgroup label="Frota">
+                                    <option value="FRT">Controle e manutenção de frota</option>
+                                </optgroup>
+                                <optgroup label="Informática">
+                                    <option value="TI" id="setor" name="setor">TI</option>
+                                </optgroup>
+                                <optgroup label="Laboratório">
+                                    <option value="TP">Teste de produtos</option>
+                                </optgroup>
+                                <optgroup label="Logística">
+                                    <option value="LG">Logística</option>
+                                    <option value="LGREV">Logística reversa</option>
+                                </optgroup>
+                                <optgroup label="Manutenção">
+                                    <option value="MEC">Manutenção Mecânica</option>
+                                    <option value="MEL">Manutenção Elétrica</option>
+                                </optgroup>
+                                <optgroup label="PCP">
+                                    <option value="PCP">PCP</option>
+                                    <option value="CRON">Cronoanálise</option>
+                                    <option value="PROG">Programação</option>
+                                </optgroup>
+                                <optgroup label="Pós Vendas">
+                                    <option value="PV">Atendimento ao cliente</option>
+                                </optgroup>
+                                <optgroup label="Produção a Gás">
+                                    <option value="CE">Corte e estamparia</option>
+                                    <option value="DEC">Decapagem</option>
+                                    <option value="CL">Corte a laser</option>
+                                    <option value="PIN">Pintura</option>
+                                    <option value="ESM">Esmaltaria</option>
+                                    <option value="SER">Serralheria</option>
+                                    <option value="CROM">Cromagem</option>
+                                    <option value="POL">Polimento</option>
+                                    <option value="MONT">Montagem</option>
+                                    <option value="INJ">Injetora</option>
+                                </optgroup>
+                                <optgroup label="Produção a Lenha">
+                                    <option value="MONTL">Montagem</option>
+                                </optgroup>
+                                <optgroup label="Refrigeração">
+                                    <option value="CER">Corte e estamparia Refrigeração</option>
+                                    <option value="VID">Vidros Insulados</option>
+                                    <option value="PU">Injetora de PU</option>
+                                    <option value="MONTR">Montagem</option>
+                                </optgroup>
+                                <optgroup label="Qualidade">
+                                    <option value="QUAL">Teste de Produtos</option>
+                                </optgroup>
+                                <optgroup label="Recursos Humanos">
+                                    <option value="RH">Recursos Humanos</option>
+                                    <option value="DP">Departamento Pessoal</option>
+                                    <option value="PORT">Portaria</option>
+                                </optgroup>
+                                <optgroup label="SESMT">
+                                    <option value="SEG">Segurança do Trabalho</option>
+                                    <option value="ENF">Enfermaria</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="local" class="col-sm-3 text-end control-label col-form-label">
+                            Local de utilização
+                        </label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="local" placeholder="Digite o local onde a pessoa irá trabalhar" name="local">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="Data_Comeco"
+                               class="col-sm-3 text-end control-label col-form-label">Data do início das atividades</label>
+                        <div class="col-sm-9">
+                            <input type="date" class="form-control" id="Data_Comeco" placeholder="digite a data do começo das atividades" name="Data_Comeco">
+                        </div>
+                    </div>
+                </div>
+                <div class="border-top">
+                    <div class="card-body">
+                        <button type="submit" class="btn btn-success text-white" value="gravar" name="submitButton">Gravar</button>
+                        <a href="/solicitacaousuario/novo" class="btn btn-primary">Limpar</a>
+                        <a href="/solicitacaousuario/" class="btn btn-danger text-white">Cancelar</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="segundo-box-solicitar">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Ferramentas necessárias</h4>
+                    <div class="check-box">
+                        <input class="form-check-input" type="checkbox" value="true" id="email" name="email">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            E-mail
+                        </label>
+                    </div>
+                    <div class="check-box">
+                        <input class="form-check-input" type="checkbox" value="true" id="compumate" name="compumate">
+                        <label class="form-check-label" for="flexCheckChecked">
+                            Compumate
+                        </label>
+                    </div>
+                    <div class="check-box">
+                        <input class="form-check-input" type="checkbox" value="true" id="NovaEstacao" name="NovaEstacao">
+                        <label class="form-check-label" for="flexCheckChecked">
+                            Nova estação de trabalho
+                        </label>
+                    </div>
+                    <div class="check-box">
+                        <input class="form-check-input" type="checkbox" value="true" id="SoftwarePadrao" name="SoftwarePadrao">
+                        <label class="form-check-label" for="flexCheckChecked">
+                            Software Padrão (Office, Leitor de PDF)
+                        </label>
+                    </div>
+                    <div class="check-box">
+                        <input class="form-check-input" type="checkbox" value="true" id="SoftwareEspecial" name="SoftwareEspecial">
+                        <label class="form-check-label" for="flexCheckChecked">
+                            Softwares Especiais
+                        </label>
+                    </div>
+                    <div class="check-box">
+                        <input class="form-check-input" type="checkbox" value="true" id="AcessoInternet" name="AcessoInternet">
+                        <label class="form-check-label" for="flexCheckChecked">
+                            Acesso a Internet
+                        </label>
+                    </div>
+                    <div class="check-box">
+                        <input class="form-check-input" type="checkbox" value="true" id="AcessoPastas" name="AcessoPastas">
+                        <label class="form-check-label" for="flexCheckChecked">
+                            Acesso as pastas
+                        </label>
+                    </div>
+                    <div class="check-box">
+                        <input class="form-check-input" type="checkbox" value="true" id="Ramal" name="Ramal">
+                        <label class="form-check-label" for="flexCheckChecked">
+                            Ramal Telefônico
+                        </label>
+                    </div>
+                    <div class="check-box">
+                        <input class="form-check-input" type="checkbox" value="true" id="Skype" name="Skype">
+                        <label class="form-check-label" for="flexCheckChecked">
+                            Skype
+                        </label>
+                    </div>
+                    <div class="form-group row">
+                        <label for="cono1"
+                               class="col-sm-3 text-end control-label col-form-label">Observações</label>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-9">
+                            <textarea class="form-control" placeholder="digite aqui qualquer informação adicional" id="observacoes" name="observacoes"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</form>
+
